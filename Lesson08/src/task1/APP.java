@@ -3,14 +3,22 @@ package task1;
 import java.util.Scanner;
 
 import task1.Seasons;
+import task1.WrongInputConsoleParametersException;
+
 
 public class APP {
 	
-	static void ts1() {
+	static void menu() {
+		System.out.println("Press 1 to check if a month is present:");
+		System.out.println("Press 2 to see all months of this season:");
+		System.out.println("Press 3 to display all months with the entered number of days:");
+		System.out.println("Press 4 to display next and previous seasons of the year:");
+	}
+	
+	static void ts1() throws WrongInputConsoleParametersException {
 		Scanner scanner =  new Scanner(System.in);
 		boolean k = false;
 		String s;
-
 		System.out.println("Please enter a month: ");
 		s = scanner.next();
 		for(Monthes a: Monthes.values()) {
@@ -20,23 +28,32 @@ public class APP {
 			}
 		}
 		if(k == true) System.out.println("GOOD");
-		else System.out.println("NON....");
+		else {
+			String message = "Wrong input!";
+			throw new WrongInputConsoleParametersException(message);
+		}
 	}
 	
-	static void ts2() {
+	static void ts2() throws WrongInputConsoleParametersException {
 		System.out.println("Please enter a season: ");
 		Scanner scanner =  new Scanner(System.in);
 		String s;
 		s = scanner.next();
 		int k = 0;
+		boolean b = true;
 		Monthes val[] = Monthes.values();
 		for(Seasons a: Seasons.values()) {
 			if(a.name().equals(s.toUpperCase())) {
 				k = a.ordinal();
+				b = true;
 				break;
-			}
-		}System.out.println(s + " monthes are: " + val[k*3].toString() + ", " 
+			} else b = false;
+		} if(b) System.out.println(s + " monthes are: " + val[k*3].toString() + ", " 
 				+ val[k*3+1].toString() + ", "+ val[k*3+2].toString() + ".");
+		else {
+			String message = "Wrong input!";
+			throw new WrongInputConsoleParametersException(message);
+		}
 	}
 	
 	static int days_am(Monthes s) {
@@ -45,17 +62,25 @@ public class APP {
 		else return 30 + (s.ordinal()+1)%2;
 	}
 	
-	static void ts3() {
+	static void ts3() throws WrongInputConsoleParametersException {
 		System.out.println("Please enter a days amount: ");
 		Scanner scanner =  new Scanner(System.in);
 		int s;
+		boolean b = true;
 		s = scanner.nextInt();
 		for(Monthes a: Monthes.values()) {
-			if(s == days_am(a)) System.out.println(a);
+			if(s == days_am(a)) {
+				System.out.println(a);
+				b = true;
+			} else b = false;
+		}
+		if (!b) {
+			String message = "Wrong input!";
+			throw new WrongInputConsoleParametersException(message);
 		}
 	}
 	
-	static void ts6() {
+	static void ts6() throws WrongInputConsoleParametersException {
 		System.out.println("Please enter a season: ");
 		Scanner scanner =  new Scanner(System.in);
 		String s;
@@ -72,19 +97,39 @@ public class APP {
 				}else {
 					System.out.println(val[a.ordinal()+1]);
 					System.out.println(val[a.ordinal()-1]);
-					}
-				}	
+				}
+			} else {
+				String message = "Wrong input!";
+				throw new WrongInputConsoleParametersException(message);
+			}	
 		}
 	}
 	
-	public static void main(String[] args) {
-		System.out.println("1: ");
-		ts1();
-		System.out.println("2: ");
-		ts2();
-		System.out.println("3: ");
-		ts3();
-		System.out.println("6, 7: ");
-		ts6();
-}
-}
+	public static void main(String[] args) throws WrongInputConsoleParametersException{
+		menu();
+		Scanner sc = new Scanner(System.in);
+		
+		switch (sc.next()) {
+		case "1": {
+			System.out.println("1: ");
+			ts1();
+			break;
+		}
+		case "2": {
+			System.out.println("2: ");
+			ts2();
+			break;
+		}
+		case "3": {
+			System.out.println("3: ");
+			ts3();
+			break;
+		}
+		case "4": {
+			System.out.println("6, 7: ");
+			ts6();
+			break;
+			}
+		}
+		}
+	}
