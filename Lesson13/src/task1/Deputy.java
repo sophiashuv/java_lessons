@@ -12,24 +12,24 @@ public class Deputy extends Human {
 	private Scanner myObj;
 
 	public Deputy() {
-		super();
-		surname = "";
-		name = "";
-		age = 0;
-		bribeTaker = false;
+	    super();
+	    surname = "";
+	    name = "";
+	    age = 0;
+	    bribeTaker = false;
 	}
 
-	public Deputy(String surname, String name, int age, int height, int weight, boolean bribeTaker) {
-		super(weight, height);
-		this.surname = surname;
-		this.name = name;
-		this.age = age;
-		this.bribeTaker = bribeTaker;
+	public Deputy(String _surname, String _name, int _age, int _height, int _weight, boolean _bribeTaker) {
+	    super(_weight, _height);
+	    surname = _surname;
+	    name = _name;
+	    age = _age;
+	    bribeTaker = _bribeTaker;
 	}
 	
 	public void inputDeputy() {
-		myObj = new Scanner(System.in);
-		System.out.println("Name: ");
+	    myObj = new Scanner(System.in);
+	    System.out.println("Name: ");
 	    name = myObj.nextLine();
 	    System.out.println("Enter surname: ");
 	    surname = myObj.nextLine();
@@ -45,33 +45,33 @@ public class Deputy extends Human {
 	}
 	
 	public String getDeputyName() {
-		return name + " " + surname;
+	    return name + " " + surname;
 	}
 	
 	public boolean isBriber() {
-		return bribeTaker;
+	    return bribeTaker;
 	}
 	
 	public int getBribeSize() {
-		return bribeSize;
+	    return bribeSize;
 	}
 	
 	public void giveBribe(int bribe) {
-		if(!bribeTaker) System.out.println("This deputy doesnt take bribes!");
-		else {
-			if (bribe > 5000) System.out.println("The police will imprison the deputy!");
-			else bribeSize += bribe;
-			}
-		}
+	    if(!bribeTaker) System.out.println("This deputy doesnt take bribes!");
+	    else {
+		if (bribe > 5000) System.out.println("The police will imprison the deputy!");
+		else bribeSize += bribe;
+	    }
+	}
 	
 	public String bribeTakerToString() {
-		if (bribeTaker) return "bribe taker";
-		else return "NOT a bribe taker";
+	    if (bribeTaker) return "bribe taker";
+	    else return "NOT a bribe taker";
 	}
 	
 	@Override
 	public String toString() {
-		return "name: " + surname + " " + name + ",\nage: " + age + ",\nheight: " + height + ",\nweight: " + weight
+	    return "name: " + surname + " " + name + ",\nage: " + age + ",\nheight: " + height + ",\nweight: " + weight
 				+ ",\n" + bribeTakerToString() + ".\n";
 	}
 }
