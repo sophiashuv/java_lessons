@@ -8,16 +8,17 @@ public abstract class Human {
 	private Scanner myObj;
 
 	public Human() {
-		weight = 0;
-		height = 0;
+	    weight = 0;
+	    height = 0;
 	}
 	
 	public Human(int _weight, int _height) {
-		weight = _weight;
-		height = _height;
+	    weight = _weight;
+	    height = _height;
 	}
+	
 	public void inputHuman() {
-		myObj = new Scanner(System.in);
+	    myObj = new Scanner(System.in);
 	    System.out.println("Enter weight: ");
 	    weight = myObj.nextInt();
 	    System.out.println("Height: ");
