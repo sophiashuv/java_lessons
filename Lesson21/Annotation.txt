@@ -1,0 +1,2 @@
+brand - Car brand
+color - Car color
