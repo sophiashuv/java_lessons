@@ -18,7 +18,7 @@ public class Main {
 				"Enter 3 to output all fractions: \n" + 
 				"Enter 4 to clear a fraction: \n" + 
 				"Enter 5 to output a fraction: \n" + 
-				"Enter 5 to add deputy to a fraction: \n" + 
+				"Enter 6 to add deputy to a fraction: \n" + 
 				"Enter 7 delete deputy from a fraction: \n" + 
 				"Enter 8 to output briberslist: \n" + 
 				"Enter 9 to output all max bribers: \n");		
@@ -45,33 +45,28 @@ public class Main {
 				verkhovnaRada.addFraction(f);
 				break;
 			}
-			
 			case 2: {
 				scanner1 = new Scanner(System.in);
 				System.out.println("Enter fraction name: ");
 				verkhovnaRada.deleteFraction(scanner1.nextLine());
 				break;
 			}
-			
 			case 3: {
 				verkhovnaRada.printFractions();
 				break;
 			}
-			
 			case 4: {
 				scanner2 = new Scanner(System.in);
 				System.out.println("Enter fraction name: ");
 				verkhovnaRada.clearFraction(scanner2.nextLine());
 				break;
 			}
-			
 			case 5: {
 				scanner3 = new Scanner(System.in);
 				System.out.println("Enter fraction name: ");
 				verkhovnaRada.printhAllFractionDeputy(scanner3.nextLine());
 				break;
 			}
-			
 			case 6: {
 				scanner4 = new Scanner(System.in);
 				System.out.println("Enter fraction name: ");
@@ -83,7 +78,6 @@ public class Main {
 					break;
 				}
 			}
-			
 			case 7: {
 				scanner5 = new Scanner(System.in);
 				System.out.println("Enter fraction name: ");
@@ -93,19 +87,16 @@ public class Main {
 				verkhovnaRada.deleteDeputy(fraction_name, deputy_name);
 				break;
 			}
-			
 			case 8: {
 				verkhovnaRada.printBribers();
 				break;
 			}
-			
 			case 9: {
 				verkhovnaRada.printMainBriber();
 				break;
 			}
-			
 			default: {
-				System.out.println("Введите число от 1 до 9!");
+				System.out.println("Wrong input!");
 				break;
 			}
 			}
