@@ -71,15 +71,11 @@ public class Main {
 		int max = 20;
 		int len = 11;
 		Number[] array = new Number[len];
-        int range = max + 1; 
-        for (int i = 0; i < len; i++) { 
-            int rand = (int)(Math.random() * range); 
-            array[i] = rand;
-            System.out.print(array[i] + " ");
-        } return array;
+        	int range = max + 1; 
+        	for (int i = 0; i < len; i++) { 
+            		int rand = (int)(Math.random() * range); 
+            		array[i] = rand;
+            		System.out.print(array[i] + " ");
+        	} return array;
 	}
-		
-		
-
-
 }
