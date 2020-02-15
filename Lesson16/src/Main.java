@@ -11,7 +11,7 @@ public class Main {
 			System.out.println("Class: " + targetClass.getClass());
 			System.out.println("Class name: " + targetClass.getName());
 			System.out.println("MODIFIER: " + Modifier.toString(targetClass.getModifiers()));
-		    System.out.println("PACKAGE: " + targetClass.getPackage());
+		    	System.out.println("PACKAGE: " + targetClass.getPackage());
 			System.out.println("SUPERCLASS: " + targetClass.getSuperclass());
 			Field[] fields = targetClass.getDeclaredFields();
 			System.out.println("-----------------------------------------------------------------");
