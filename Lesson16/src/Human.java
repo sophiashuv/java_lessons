@@ -37,8 +37,6 @@ public class Human implements Comparable<Human>{
 
 	@Override
 	public String toString() {
-	    return "Name = " + name + ", " +"age = " + age +"\n";
+	    	return "Name = " + name + ", " +"age = " + age +"\n";
 	  }
-	
-
 }
