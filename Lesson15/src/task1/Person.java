@@ -11,9 +11,9 @@ public class Person {
 	public Person () {
 		sc = new Scanner(System.in);
 		System.out.print("Name: ");
-	    name = sc.nextLine();
-    	System.out.print("Age: ");
-    	age = sc.nextInt();
+	    	name = sc.nextLine();
+    		System.out.print("Age: ");
+    		age = sc.nextInt();
 	}
 	
 	public Person (String name, int age) {
