@@ -10,9 +10,9 @@ public class Animal {
 	public Animal() {
 		sc = new Scanner(System.in);
 		System.out.print("Type: ");
-	    type = sc.nextLine();
-    	System.out.print("Name: ");
-    	name = sc.nextLine();
+		type = sc.nextLine();
+    	    	System.out.print("Name: ");
+    	    	name = sc.nextLine();
 	}
 	
 	public Animal(String type, String name) {
@@ -44,6 +44,4 @@ public class Animal {
 	public String toString() {
 		return "type = " + type + ", name = " + name;
 	}
-
-
 }
